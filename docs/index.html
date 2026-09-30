@@ -199,11 +199,31 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdro
 /* Testimonials */
 .quotes{background:var(--g50)}
 .q-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
-.quote{background:#fff;border:1px solid var(--g200);border-left:4px solid var(--red);border-radius:var(--r);padding:26px}
-.quote p{font-size:15px;color:var(--g600)}
-.quote footer{margin-top:18px;font-size:13px}
-.quote footer b{display:block;color:var(--ink)}.quote footer span{color:var(--g500)}
-@media(max-width:860px){.q-grid{grid-template-columns:1fr}}
+.quote{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--g200);border-top:4px solid var(--red);border-radius:var(--r);padding:28px 26px 24px;transition:.2s}
+.quote:hover{box-shadow:0 18px 36px -18px rgba(17,24,39,.3);transform:translateY(-3px)}
+.q-top{display:flex;align-items:center;gap:14px}
+.avatar{flex:none;width:72px;height:72px;border-radius:50%;background:#fff;object-fit:cover;border:3px solid #fff;box-shadow:0 0 0 2px var(--red);filter:grayscale(1) contrast(1.05);transition:filter .3s}
+.quote:hover .avatar,.insp:hover .avatar{filter:none}
+.q-who b{display:block;font-size:16px;font-weight:800;line-height:1.25}
+.q-who b a:hover{color:var(--red)}
+.q-who span{display:block;margin-top:3px;font-size:12.5px;color:var(--g500);line-height:1.4}
+.quote blockquote{position:relative;margin:20px 0 0;padding-top:30px;font-size:16px;font-weight:500;color:var(--ink);line-height:1.55}
+.quote blockquote::before{content:"\201C";position:absolute;top:-6px;left:-2px;font-size:64px;font-weight:900;line-height:1;color:var(--red)}
+.quote details{margin-top:auto;padding-top:18px}
+.quote summary{cursor:pointer;list-style:none;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
+.quote summary::-webkit-details-marker{display:none}
+.quote summary::after{content:" +"}
+.quote details[open] summary::after{content:" \2212"}
+.quote details p{margin-top:12px;padding-top:12px;border-top:1px solid var(--g200);font-size:14px;color:var(--g600);line-height:1.6}
+.insp-head{margin-top:64px;display:flex;align-items:center;gap:16px}
+.insp-head::after{content:"";flex:1;height:1px;background:var(--g200)}
+.insp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
+.insp{display:flex;gap:16px;align-items:flex-start;padding:4px 0}
+.insp .avatar{width:60px;height:60px}
+.insp p{font-size:15px;font-weight:600;line-height:1.45;color:var(--ink)}
+.insp small{display:block;margin-top:8px;font-size:12.5px;color:var(--g500)}
+.insp small b{color:var(--ink)}
+@media(max-width:900px){.q-grid,.insp-grid{grid-template-columns:1fr}}
 
 /* PRO */
 .pro-box{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;border:2px solid var(--red);border-radius:22px;padding:48px;background:var(--red-soft)}
@@ -394,12 +414,31 @@ footer.site a:hover{color:#fff}
 
 <section class="quotes" id="opiniones">
   <div class="wrap">
-    <span class="eyebrow">Nuestra inspiración</span>
+    <span class="eyebrow">Opiniones</span>
     <h2>Lo dicen quienes lo usan</h2>
+    <p class="lead">Profesionales de la formación, la investigación y la salud que ya trabajan con ViTAG.</p>
     <div class="q-grid">
-      <figure class="quote"><p>Al ser un sistema de videoanálisis, es amigable y fácil de usar. La personalización es una de sus grandes virtudes.</p><footer><b>Miki Obradors</b><span>Responsable de desarrollo de tenis</span></footer></figure>
-      <figure class="quote"><p>Permite recoger datos cuantitativos y cualitativos en tiempo real para la investigación educativa.</p><footer><b>Mireia Usart</b><span>Investigadora, URV</span></footer></figure>
-      <figure class="quote"><p>Mejora el debriefing de la simulación clínica y refuerza la privacidad.</p><footer><b>Verónica Méndez</b><span>Directora, CISA-UIC</span></footer></figure>
+      <figure class="quote">
+        <div class="q-top"><img class="avatar" src="img/miki-obradors.png" alt="Miki Obradors" width="72" height="72" loading="lazy"><figcaption class="q-who"><b><a href="https://mikiobradors.com/" target="_blank" rel="noopener">Miki Obradors</a></b><span>Líder en desarrollo de tenis y autor del libro Piensa Útil</span></figcaption></div>
+        <blockquote>Como sistema de videoanálisis es amigable y fácil de usar. Siendo la personalización una de sus principales virtudes.</blockquote>
+        <details><summary>Testimonio completo</summary><p>Con más de 25 años en el sector del alto rendimiento y formación en tenis, considero a ViTAG como la demostración que algo bien pensando y ejecutado marca las diferencias. Como sistema de videoanálisis es amigable y fácil de usar. Siendo la personalización una de sus principales virtudes. Es una herramienta completamente útil.</p></details>
+      </figure>
+      <figure class="quote">
+        <div class="q-top"><img class="avatar" src="img/mireia-usart.png" alt="Mireia Usart" width="72" height="72" loading="lazy"><figcaption class="q-who"><b>Mireia Usart</b><span>Profesora Lectora SH de métodos de investigación educativa en la URV, departamento de pedagogía, grupo de investigación ARGET</span></figcaption></div>
+        <blockquote>Esta solución ayudará a investigadores, instituciones y maestros a recuperar, analizar y luego evaluar a maestros y guiarlos a una reflexión real y una mejor práctica de su profesión.</blockquote>
+        <details><summary>Testimonio completo</summary><p>En la URV, dentro del grupo de investigación ARGET, aplicamos esta herramienta de videoanálisis para estudiar la competencia digital docente. Esto ayuda a recuperar datos en tiempo real, cuantitativo y cualitativo de la actividad docente sin tener que gastar horas de datos posteriores a la visión y catalogación. Esta solución ayudará a investigadores, instituciones y maestros a recuperar, analizar y luego evaluar a maestros y guiarlos a una reflexión real y una mejor práctica de su profesión.</p></details>
+      </figure>
+      <figure class="quote">
+        <div class="q-top"><img class="avatar" src="img/veronica-mendez.png" alt="Veronica Mendez" width="72" height="72" loading="lazy"><figcaption class="q-who"><b>Veronica Mendez</b><span>Responsable CISA - UIC</span></figcaption></div>
+        <blockquote>La plataforma ViTAG nos ha permitido aumentar la calidad del debriefing de las actividades prácticas y evaluativas en Simulación Clínica…</blockquote>
+        <details><summary>Testimonio completo</summary><p>La plataforma ViTAG nos ha permitido aumentar la calidad del debriefing de las actividades prácticas y evaluativas en Simulación Clínica, optimizando el proceso de gestión de compartir cada videograbación del alumnado individualmente para autoevaluarse, así como videograbaciones evaluadas por parte del docente, las cuales permiten que el alumno vea, para cada acción realizada en su caso clínico, una marca temporal incrustada por el evaluador que indica qué ha sucedido, áreas a mejorar, y refuerzos de acciones acertadas. Con este sistema, además, hemos aumentado la seguridad de la privacidad de cada usuario, así como de la reducción del riesgo de divulgación del contenido.</p></details>
+      </figure>
+    </div>
+    <div class="insp-head"><span class="eyebrow">Nuestra inspiración</span></div>
+    <div class="insp-grid">
+      <div class="insp"><img class="avatar" src="img/seneca.png" alt="Seneca" width="60" height="60" loading="lazy"><div><p>&ldquo;Si me ofreciesen la sabiduría con la condición de guardarla para mí sin comunicarla a nadie, no la querría.&rdquo;</p><small><b>Seneca</b> &middot; Filósofo</small></div></div>
+      <div class="insp"><img class="avatar" src="img/pep-guardiola.png" alt="Pep Guardiola" width="60" height="60" loading="lazy"><div><p>&ldquo;El talento depende de la inspiración, pero el esfuerzo depende de cada uno.&rdquo;</p><small><b>Pep Guardiola</b> &middot; Entrenador</small></div></div>
+      <div class="insp"><img class="avatar" src="img/alain-ducasse.png" alt="Alain Ducasse" width="60" height="60" loading="lazy"><div><p>&ldquo;Lo mejor que se puede compartir es el conocimiento.&rdquo;</p><small><b>Alain Ducasse</b> &middot; Chef</small></div></div>
     </div>
   </div>
 </section>
