@@ -1,6 +1,6 @@
 # Kanban
 
-Aplicación estática (HTML + ES modules, sin dependencias ni build). Se sirve desde cualquier servidor estático (p. ej. `python3 -m http.server -d docs`) o GitHub Pages en `/kanban/`.
+Aplicación estática (HTML + ES modules, sin dependencias ni build). Se sirve desde cualquier servidor estático (p. ej. `python3 -m http.server -d docs`) o GitHub Pages en `/kanban.html`.
 
 ## Funciones del núcleo
 - Varios tableros, columnas (crear, editar, reordenar, eliminar, marcar como "final"), tarjetas con descripción, prioridad, responsable, fecha límite, etiquetas y checklist.
